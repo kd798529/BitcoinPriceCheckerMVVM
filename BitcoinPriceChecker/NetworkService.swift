@@ -19,7 +19,7 @@ final class NetworkService {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
                     if let jsonDictionary = try? JSONSerialization.jsonObject(with: data) as? [String:Double] {
-                        DispatchQueue.main.async {
+                        Task { @MainActor in
                             self.currency = jsonDictionary
                         }
                     }

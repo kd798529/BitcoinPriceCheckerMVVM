@@ -21,14 +21,8 @@ class BTCViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        setupBinders()
-        
         viewModel.getPrice()
-        
-        
+        setupBinders()
     }
     
     @IBAction func refreshButton(_ sender: Any) {
@@ -38,17 +32,12 @@ class BTCViewController: UIViewController {
     
     private func setupBinders() {
         viewModel.currencyData.bind { [weak self] currency in
-            if let nCurrency = currency {
-                if let usdPrice = nCurrency["USD"] {
-                    self?.usdLabel.text = self?.doubleToStringMoney(price: usdPrice, currencyCode: "USD")
-                }
-                if let eurPrice = nCurrency["EUR"] {
-                    self?.eurLabel.text = self?.doubleToStringMoney(price: eurPrice, currencyCode: "EUR")
-                }
-                if let jpnPrice = nCurrency["JPY"] {
-                    self?.jpnLabel.text = self?.doubleToStringMoney(price: jpnPrice, currencyCode: "JPY")
-                }
-            }
+            // create a weak self refrence to avoid a memory issues.
+            guard let self = self else { return }
+            
+            self.usdLabel.text = self.doubleToStringMoney(price: currency?["USD"] ?? 00.00, currencyCode: "USD")
+            self.eurLabel.text = self.doubleToStringMoney(price: currency?["EUR"] ?? 00.00, currencyCode: "EUR")
+            self.jpnLabel.text = self.doubleToStringMoney(price: currency?["JPY"] ?? 00.00, currencyCode: "JPY")
         }
     }
     

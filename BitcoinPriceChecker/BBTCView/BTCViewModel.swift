@@ -13,6 +13,5 @@ final class BTCViewModel {
     func getPrice(){
         let prices = NetworkService.shared.getPrice()
         currencyData.value = prices
-        print(prices)
     }
 }
