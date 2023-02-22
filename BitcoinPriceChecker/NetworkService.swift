@@ -23,8 +23,6 @@ final class NetworkService {
                             self.currency = jsonDictionary
                         }
                     }
-                } else {
-                    self.currency = nil
                 }
             }.resume()
         }
