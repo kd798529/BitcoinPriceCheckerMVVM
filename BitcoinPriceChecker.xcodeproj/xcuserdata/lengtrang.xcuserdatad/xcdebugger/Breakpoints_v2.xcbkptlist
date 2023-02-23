@@ -7,33 +7,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AAD39411-FF80-4540-8C56-6546B4A5C2E5"
+            uuid = "DA30E107-9DE2-4CAC-9A87-35B90832595C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitcoinPriceChecker/BBTCView/BTCViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "setupBinders()"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "refreshButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F2DF6732-9B8D-47CF-848E-409B3C9B34F7"
+            uuid = "E596BF61-82C6-4F30-99C6-BE4DD5B4011D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BitcoinPriceChecker/BBTCView/BTCViewController.swift"
+            filePath = "BitcoinPriceChecker/NetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "doubleToStringMoney(price:currencyCode:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getPrice()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E596BF61-82C6-4F30-99C6-BE4DD5B4011D - e1955dcbb008b866"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BitcoinPriceChecker.NetworkService.getPrice() -&gt; Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.Double&gt;&gt;"
+                  moduleName = "BitcoinPriceChecker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lengtrang/Documents/iOSGithub/BitcoinPriceCheckerMVVM/BitcoinPriceChecker/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "201">
+               </Location>
+               <Location
+                  uuid = "E596BF61-82C6-4F30-99C6-BE4DD5B4011D - e1955dcbb008b866"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BitcoinPriceChecker.NetworkService.getPrice() -&gt; Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.Double&gt;&gt;"
+                  moduleName = "BitcoinPriceChecker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lengtrang/Documents/iOSGithub/BitcoinPriceCheckerMVVM/BitcoinPriceChecker/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "285">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

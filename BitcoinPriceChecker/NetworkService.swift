@@ -10,22 +10,22 @@ import Foundation
 final class NetworkService {
     static let shared = NetworkService()
     
-    private var currency: [String: Double]?
+    private var currencyData: Currency?
     
     private init() {}
     
-    func getPrice() -> [String:Double]?{
+    func getPrice() -> Currency?{
         if let url = URL(string: "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR") {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
-                    if let jsonDictionary = try? JSONSerialization.jsonObject(with: data) as? [String:Double] {
-                        Task { @MainActor in
-                            self.currency = jsonDictionary
-                        }
-                    }
+                    self.currencyData = try? JSONDecoder().decode(Currency.self, from: data)
                 }
             }.resume()
         }
-        return self.currency
+        return self.currencyData
     }
+}
+
+struct Currency: Codable {
+    var currency: [String: Double]?
 }

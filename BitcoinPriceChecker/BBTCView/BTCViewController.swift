@@ -11,14 +11,11 @@ class BTCViewController: UIViewController {
     
         
     @IBOutlet weak var usdLabel: UILabel!
-    
     @IBOutlet weak var eurLabel: UILabel!
-    
     @IBOutlet weak var jpnLabel: UILabel!
     
     private let viewModel = BTCViewModel()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getPrice()
@@ -31,29 +28,34 @@ class BTCViewController: UIViewController {
     
     
     private func setupBinders() {
-        viewModel.currencyData.bind { [weak self] currency in
+        viewModel.currencyData.bind { [weak self] currencyData in
             // create a weak self refrence to avoid a memory issues.
             guard let self = self else { return }
+            guard let currency = currencyData?.currency else { return }
             
-            self.usdLabel.text = self.doubleToStringMoney(price: currency?["USD"] ?? 00.00, currencyCode: "USD")
-            self.eurLabel.text = self.doubleToStringMoney(price: currency?["EUR"] ?? 00.00, currencyCode: "EUR")
-            self.jpnLabel.text = self.doubleToStringMoney(price: currency?["JPY"] ?? 00.00, currencyCode: "JPY")
+            self.usdLabel.text = self.formattedCurrency(currencyType: .usd, currencyData: currency)
+            self.eurLabel.text = self.formattedCurrency(currencyType: .eur, currencyData: currency)
+            self.jpnLabel.text = self.formattedCurrency(currencyType: .jpy, currencyData: currency)
         }
     }
-    
-    func doubleToStringMoney(price: Double, currencyCode: String) -> String? {
+
+    private func formattedCurrency(currencyType: CurrencyConst, currencyData: [String: Double]) -> String {
+        let currencySelected = currencyType.rawValue
+        let price = currencyData[currencySelected] ?? 00.00
+        
         let formatter = NumberFormatter()
-        
         formatter.numberStyle = .currency
-        
-        formatter.currencyCode = currencyCode
-        
-        let priceString = formatter.string(from: NSNumber(value: price))
-        return priceString
+        formatter.currencyCode = currencySelected
+        guard let currencyFormatted: String = formatter.string(from: NSNumber(value: price)) else { return "" }
+        return currencyFormatted
     }
 }
 
 
 
-
+enum CurrencyConst: String {
+    case usd = "USD"
+    case eur = "EUR"
+    case jpy = "JPY"
+}
 
