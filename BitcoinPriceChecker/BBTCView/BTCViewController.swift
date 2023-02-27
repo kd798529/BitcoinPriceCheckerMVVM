@@ -33,29 +33,9 @@ class BTCViewController: UIViewController {
             guard let self = self else { return }
             guard let currency = currencyData?.currency else { return }
             
-            self.usdLabel.text = self.formattedCurrency(currencyType: .usd, currencyData: currency)
-            self.eurLabel.text = self.formattedCurrency(currencyType: .eur, currencyData: currency)
-            self.jpnLabel.text = self.formattedCurrency(currencyType: .jpy, currencyData: currency)
+            self.usdLabel.text = CurrencyUtility.formattedCurrency(currencyType: .usd, currencyData: currency)
+            self.eurLabel.text = CurrencyUtility.formattedCurrency(currencyType: .eur, currencyData: currency)
+            self.jpnLabel.text = CurrencyUtility.formattedCurrency(currencyType: .jpy, currencyData: currency)
         }
     }
-
-    private func formattedCurrency(currencyType: CurrencyConst, currencyData: [String: Double]) -> String {
-        let currencySelected = currencyType.rawValue
-        let price = currencyData[currencySelected] ?? 00.00
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencyCode = currencySelected
-        guard let currencyFormatted: String = formatter.string(from: NSNumber(value: price)) else { return "" }
-        return currencyFormatted
-    }
 }
-
-
-
-enum CurrencyConst: String {
-    case usd = "USD"
-    case eur = "EUR"
-    case jpy = "JPY"
-}
-

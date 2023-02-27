@@ -36,11 +36,11 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "E596BF61-82C6-4F30-99C6-BE4DD5B4011D - e1955dcbb008b866"
+                  uuid = "E596BF61-82C6-4F30-99C6-BE4DD5B4011D - a3df74fc61f630a3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BitcoinPriceChecker.NetworkService.getPrice() -&gt; Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.Double&gt;&gt;"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BitcoinPriceChecker.NetworkService.getPrice() -&gt; Swift.Optional&lt;BitcoinPriceChecker.Currency&gt;"
                   moduleName = "BitcoinPriceChecker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lengtrang/Documents/iOSGithub/BitcoinPriceCheckerMVVM/BitcoinPriceChecker/NetworkService.swift"
@@ -48,14 +48,14 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "201">
+                  offsetFromSymbolStart = "97">
                </Location>
                <Location
-                  uuid = "E596BF61-82C6-4F30-99C6-BE4DD5B4011D - e1955dcbb008b866"
+                  uuid = "E596BF61-82C6-4F30-99C6-BE4DD5B4011D - a3df74fc61f630a3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BitcoinPriceChecker.NetworkService.getPrice() -&gt; Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.Double&gt;&gt;"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BitcoinPriceChecker.NetworkService.getPrice() -&gt; Swift.Optional&lt;BitcoinPriceChecker.Currency&gt;"
                   moduleName = "BitcoinPriceChecker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lengtrang/Documents/iOSGithub/BitcoinPriceCheckerMVVM/BitcoinPriceChecker/NetworkService.swift"
@@ -63,7 +63,85 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "285">
+                  offsetFromSymbolStart = "175">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A4E0028-717B-4726-A9DC-0904F126FBB4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BitcoinPriceCheckerTests/BitcoinPriceCheckerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "testCurrencyFormatter()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0A4E0028-717B-4726-A9DC-0904F126FBB4 - 79d1a616e9d778f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BitcoinPriceCheckerTests.BitcoinPriceCheckerTests.testCurrencyFormatter() throws -&gt; ()"
+                  moduleName = "BitcoinPriceCheckerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lengtrang/Documents/iOSGithub/BitcoinPriceCheckerMVVM/BitcoinPriceCheckerTests/BitcoinPriceCheckerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "1891">
+               </Location>
+               <Location
+                  uuid = "0A4E0028-717B-4726-A9DC-0904F126FBB4 - 79d1a616e9d778f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BitcoinPriceCheckerTests.BitcoinPriceCheckerTests.testCurrencyFormatter() throws -&gt; ()"
+                  moduleName = "BitcoinPriceCheckerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lengtrang/Documents/iOSGithub/BitcoinPriceCheckerMVVM/BitcoinPriceCheckerTests/BitcoinPriceCheckerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "1326">
+               </Location>
+               <Location
+                  uuid = "0A4E0028-717B-4726-A9DC-0904F126FBB4 - 79d1a616e9d76717"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BitcoinPriceCheckerTests.BitcoinPriceCheckerTests.testCurrencyFormatter() throws -&gt; ()"
+                  moduleName = "BitcoinPriceCheckerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lengtrang/Documents/iOSGithub/BitcoinPriceCheckerMVVM/BitcoinPriceCheckerTests/BitcoinPriceCheckerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "1560">
+               </Location>
+               <Location
+                  uuid = "0A4E0028-717B-4726-A9DC-0904F126FBB4 - 79d1a616e9d76717"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BitcoinPriceCheckerTests.BitcoinPriceCheckerTests.testCurrencyFormatter() throws -&gt; ()"
+                  moduleName = "BitcoinPriceCheckerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lengtrang/Documents/iOSGithub/BitcoinPriceCheckerMVVM/BitcoinPriceCheckerTests/BitcoinPriceCheckerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "1579">
                </Location>
             </Locations>
          </BreakpointContent>
