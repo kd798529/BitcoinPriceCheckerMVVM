@@ -8,11 +8,10 @@
 import Foundation
 
 final class BTCViewModel {
-    var currencyData: ObservableObject<[String:Double]?> = ObservableObject(value: nil)
+    var currencyData: ObservableObject<Currency?> = ObservableObject(value: nil)
     
     func getPrice(){
         let prices = NetworkService.shared.getPrice()
         currencyData.value = prices
-        print(prices)
     }
 }

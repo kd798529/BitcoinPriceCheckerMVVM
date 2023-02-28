@@ -11,60 +11,45 @@ class BTCViewController: UIViewController {
     
         
     @IBOutlet weak var usdLabel: UILabel!
-    
     @IBOutlet weak var eurLabel: UILabel!
-    
     @IBOutlet weak var jpnLabel: UILabel!
     
-    private let viewModel = BTCViewModel()
-
+    private let currencyViewModel = CurrencyViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        setupBinders()
-        
-        viewModel.getPrice()
-        
-        
+        currencyViewModel.delegate = self
+        currencyViewModel.refresh()
+
     }
     
     @IBAction func refreshButton(_ sender: Any) {
-        viewModel.getPrice()
-    }
-    
-    
-    private func setupBinders() {
-        viewModel.currencyData.bind { [weak self] currency in
-            if let nCurrency = currency {
-                if let usdPrice = nCurrency["USD"] {
-                    self?.usdLabel.text = self?.doubleToStringMoney(price: usdPrice, currencyCode: "USD")
-                }
-                if let eurPrice = nCurrency["EUR"] {
-                    self?.eurLabel.text = self?.doubleToStringMoney(price: eurPrice, currencyCode: "EUR")
-                }
-                if let jpnPrice = nCurrency["JPY"] {
-                    self?.jpnLabel.text = self?.doubleToStringMoney(price: jpnPrice, currencyCode: "JPY")
-                }
-            }
-        }
-    }
-    
-    func doubleToStringMoney(price: Double, currencyCode: String) -> String? {
-        let formatter = NumberFormatter()
-        
-        formatter.numberStyle = .currency
-        
-        formatter.currencyCode = currencyCode
-        
-        let priceString = formatter.string(from: NSNumber(value: price))
-        return priceString
+        currencyViewModel.refresh()
     }
 }
 
-
-
-
-
+extension BTCViewController: CurrencyViewModelDelegate {
+    func receiveUSD(currencyText: String?) {
+        Task { @MainActor in
+            guard let text = currencyText else { return }
+            self.usdLabel.text = text
+        }
+    }
+    
+    func receiveEUR(currencyText: String?) {
+        Task { @MainActor in
+            guard let text = currencyText else { return }
+            self.eurLabel.text = text
+        }
+    }
+    
+    func receiveJPY(currencyText: String?) {
+        Task { @MainActor in
+            guard let text = currencyText else { return }
+            self.jpnLabel.text = text
+        }
+    }
+    func receiveAll(usd: String?, eur: String?, jpy: String?) {
+        print("All")
+    }
+}
