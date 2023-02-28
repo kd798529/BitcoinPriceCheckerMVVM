@@ -14,28 +14,42 @@ class BTCViewController: UIViewController {
     @IBOutlet weak var eurLabel: UILabel!
     @IBOutlet weak var jpnLabel: UILabel!
     
-    private let viewModel = BTCViewModel()
-
+    private let currencyViewModel = CurrencyViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getPrice()
-        setupBinders()
+        currencyViewModel.delegate = self
+        currencyViewModel.refresh()
+
     }
     
     @IBAction func refreshButton(_ sender: Any) {
-        viewModel.getPrice()
+        currencyViewModel.refresh()
+    }
+}
+
+extension BTCViewController: CurrencyViewModelDelegate {
+    func receiveUSD(currencyText: String?) {
+        Task { @MainActor in
+            guard let text = currencyText else { return }
+            self.usdLabel.text = text
+        }
     }
     
-    
-    private func setupBinders() {
-        viewModel.currencyData.bind { [weak self] currencyData in
-            // create a weak self refrence to avoid a memory issues.
-            guard let self = self else { return }
-            guard let currency = currencyData?.currency else { return }
-            
-            self.usdLabel.text = CurrencyUtility.formattedCurrency(currencyType: .usd, currencyData: currency)
-            self.eurLabel.text = CurrencyUtility.formattedCurrency(currencyType: .eur, currencyData: currency)
-            self.jpnLabel.text = CurrencyUtility.formattedCurrency(currencyType: .jpy, currencyData: currency)
+    func receiveEUR(currencyText: String?) {
+        Task { @MainActor in
+            guard let text = currencyText else { return }
+            self.eurLabel.text = text
         }
+    }
+    
+    func receiveJPY(currencyText: String?) {
+        Task { @MainActor in
+            guard let text = currencyText else { return }
+            self.jpnLabel.text = text
+        }
+    }
+    func receiveAll(usd: String?, eur: String?, jpy: String?) {
+        print("All")
     }
 }

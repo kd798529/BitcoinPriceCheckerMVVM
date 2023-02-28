@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C185D4D229A8863B00D27581 /* BitcoinPriceCheckerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185D4D129A8863B00D27581 /* BitcoinPriceCheckerTests.swift */; };
 		C185D4DA29AC61E900D27581 /* CurrencyUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185D4D929AC61E900D27581 /* CurrencyUtility.swift */; };
+		C185D4DD29AC651D00D27581 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185D4DC29AC651D00D27581 /* NetworkManager.swift */; };
+		C185D4DF29AC784000D27581 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185D4DE29AC784000D27581 /* CurrencyViewModel.swift */; };
 		EEA80F8629A53FFB0037A5E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA80F8529A53FFB0037A5E3 /* AppDelegate.swift */; };
 		EEA80F8829A53FFB0037A5E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA80F8729A53FFB0037A5E3 /* SceneDelegate.swift */; };
 		EEA80F8A29A53FFB0037A5E3 /* BTCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA80F8929A53FFB0037A5E3 /* BTCViewController.swift */; };
@@ -34,6 +36,8 @@
 		C185D4CF29A8863B00D27581 /* BitcoinPriceCheckerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinPriceCheckerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C185D4D129A8863B00D27581 /* BitcoinPriceCheckerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceCheckerTests.swift; sourceTree = "<group>"; };
 		C185D4D929AC61E900D27581 /* CurrencyUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUtility.swift; sourceTree = "<group>"; };
+		C185D4DC29AC651D00D27581 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C185D4DE29AC784000D27581 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		EEA80F8229A53FFB0037A5E3 /* BitcoinPriceChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinPriceChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA80F8529A53FFB0037A5E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEA80F8729A53FFB0037A5E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,14 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		C185D4DB29AC64A400D27581 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C185D4DC29AC651D00D27581 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		EEA80F7929A53FFB0037A5E3 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +114,7 @@
 		EEA80F8429A53FFB0037A5E3 /* BitcoinPriceChecker */ = {
 			isa = PBXGroup;
 			children = (
+				C185D4DB29AC64A400D27581 /* Services */,
 				C185D4D829AC61C500D27581 /* Utility */,
 				EEA80F8529A53FFB0037A5E3 /* AppDelegate.swift */,
 				EEA80F8729A53FFB0037A5E3 /* SceneDelegate.swift */,
@@ -121,6 +134,7 @@
 			children = (
 				EEA80F8929A53FFB0037A5E3 /* BTCViewController.swift */,
 				EEA80F9929A5447A0037A5E3 /* BTCViewModel.swift */,
+				C185D4DE29AC784000D27581 /* CurrencyViewModel.swift */,
 			);
 			path = BBTCView;
 			sourceTree = "<group>";
@@ -236,10 +250,12 @@
 			files = (
 				EEA80F9D29A565E90037A5E3 /* NetworkService.swift in Sources */,
 				EEA80F8A29A53FFB0037A5E3 /* BTCViewController.swift in Sources */,
+				C185D4DD29AC651D00D27581 /* NetworkManager.swift in Sources */,
 				EEA80F8629A53FFB0037A5E3 /* AppDelegate.swift in Sources */,
 				C185D4DA29AC61E900D27581 /* CurrencyUtility.swift in Sources */,
 				EEA80F9A29A5447A0037A5E3 /* BTCViewModel.swift in Sources */,
 				EEA80F8829A53FFB0037A5E3 /* SceneDelegate.swift in Sources */,
+				C185D4DF29AC784000D27581 /* CurrencyViewModel.swift in Sources */,
 				EEA80F9F29A5896F0037A5E3 /* ObservableObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

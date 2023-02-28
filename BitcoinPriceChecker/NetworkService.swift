@@ -26,6 +26,4 @@ final class NetworkService {
     }
 }
 
-struct Currency: Codable {
-    var currency: [String: Double]?
-}
+
