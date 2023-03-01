@@ -15,11 +15,11 @@ class NetworkManager {
     // URL(string: "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR")
     let urlPrefix = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms="
     var currencyData: [String: Double]?
-//    {
-//        willSet{
-//            self.delegate?.receiveCurrencyData(currencyInfo: self.currencyData)
-//        }
-//    }
+    {
+        didSet{
+            self.delegate?.receiveCurrencyData(currencyInfo: self.currencyData)
+        }
+    }
         
     init(){
     }
@@ -56,7 +56,6 @@ class NetworkManager {
                     return
                 }
                 self.currencyData = currency
-                self.delegate?.receiveCurrencyData(currencyInfo: currency)
             }
             
         }

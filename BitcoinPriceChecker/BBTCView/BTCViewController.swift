@@ -49,7 +49,4 @@ extension BTCViewController: CurrencyViewModelDelegate {
             self.jpnLabel.text = text
         }
     }
-    func receiveAll(usd: String?, eur: String?, jpy: String?) {
-        print("All")
-    }
 }
